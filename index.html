@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha384-c8o/kLOHlOIVoKtI6f7lT5MUDZ25xofqrCrUZOMTi/aQGBlJyGBQW5aDXVaFj3bm" crossorigin="anonymous">
+    <title>Quarteto Fantástico Vôlei</title>
+</head>
+<body>
+    <header>
+        <img src="./images/logo.jpeg" alt="Logo da Quarteto Fantástico Vôlei">
+        <nav>
+            <ul>
+                <li><a href="#historico"><i class="fas fa-history"></i> Histórico</a></li>
+                <li><a href="#galeria"><i class="fas fa-images"></i> Galeria</a></li>
+                <li><a href="#jogadores"><i class="fas fa-users"></i> Jogadores</a></li>
+                <li><a href="#patrocinadores"><i class="fas fa-handshake"></i> Patrocinadores</a></li>
+            </ul>
+        </nav>
+        <h1>Quarteto Fantástico Vôlei</h1>
+    </header>
+
+    <section id="carousel">
+    <h2>Time</h2>
+    <div class="main-carousel">
+        <div>
+            <img src="./images/trio.jpg" alt="Foto 1">
+        </div>
+        <div>
+            <img src="./images/dupla.jpg" alt="Foto 2">
+        </div>
+        <div>
+            <img src="./images/treino.jpg" alt="Foto 3">
+        </div>
+        <button class="prev"></button>
+        <button class="next"></button>
+    </div>
+    </section>
+  
+
+    <!--
+<section id="video">
+    <h2>Vídeo do Time</h2>
+    <video controls width="100%" height="50%">
+        <source src="./video/treino.mp4" type="video/mp4">
+        Seu navegador não suporta o elemento de vídeo.
+    </video>
+</section>
+-->
+
+
+    <section id="historico">
+        <h2>Histórico</h2>
+        <p>No dia 8 de outubro de 2023, o Quarteto Fantástico Vôlei deu seus primeiros passos na arena esportiva ao participar pela primeira vez de um torneio de vôlei de areia. O evento ocorreu na Arena Florestal em Itacoatiara, Amazonas. Nesse dia especial, o grupo amador demonstrou paixão, determinação e talento, marcando o início de uma jornada promissora no cenário esportivo.</p>
+    </section>
+
+    <section id="galeria">
+        <h2>Galeria de Fotos</h2>
+        <div class="gallery">
+            <img src="./images/1.jpeg" alt="Foto 1">
+            <img src="./images/trio.jpg" alt="Foto 2">
+            <img src="./images/dupla.jpg" alt="Foto 3">
+            <img src="./images/treino.jpg" alt="Foto 4">
+            <img src="./images/10.jpg" alt="Foto 5">
+            <img src="./images/2.jpeg" alt="Foto 6">
+        </div>
+    </section>
+
+    <section id="jogadores">
+        <h2>Perfis dos Jogadores</h2>
+        <div class="jogador">
+            <img src="./images/bruno.jpg" alt="Foto Jogador 1">
+            <p>Bruno</p>
+            <p>Instagram: <a href="https://www.instagram.com/coebruno97" target="_blank"><i class="fab fa-instagram"></i> @coebruno97</a></p>
+        </div>
+        <div class="jogador">
+            <img src="./images/klynger.jpg" alt="Foto Jogador 2">
+            <p>Klynger</p>
+            <p>Facebook: <a href="https://www.facebook.com/klynger.vasconcelos?mibextid=2JQ9oc" target="_blank"><i class="fab fa-facebook"></i> @KlyngerVasconcelos</a></p>
+        </div>
+        <div class="jogador">
+            <img src="./images/lian.png" alt="Foto Jogador 3">
+            <p>Lian</p>
+            <p>Instagram: <a href="https://www.instagram.com/lian_s0uza" target="_blank"><i class="fab fa-instagram"></i> @lian_s0uza</a></p>
+        </div>
+        <div class="jogador">
+            <img src="./images/ricardo.jpg" alt="Foto Jogador 4">
+            <p>Ricardo</p>
+            <p>Facebook: <a href="https://www.instagram.com/o_ricardocreis" target="_blank"><i class="fab fa-instagram"></i> @o_ricardocreis</a></p>
+        </div>
+
+    </section>
+
+    <section id="patrocinadores">
+        <h2>Patrocinadores e Apoios</h2>
+        <div class="sponsor-logo">
+            <img src="./images/jr.png" alt="Logo do Patrocinador 1">
+        </div>
+     
+    </section>
+    
+    <button id="backToTopBtn" title="Voltar ao Topo">&#9650;</button>
+
+    <footer>
+        <p>&copy; Desenvolvido por Ricardo C. Reis </p>
+    </footer>
+
+    <script src="script.js"></script>
+   
+    <script>
+    document.addEventListener('DOMContentLoaded', function () {
+    let currentIndex = 0;
+    const slides = document.querySelectorAll('.main-carousel div');
+    const totalSlides = slides.length;
+
+    function showSlide(index) {
+        slides.forEach((slide) => {
+            slide.style.transform = `translateX(-${index * 100}%)`;
+        });
+    }
+
+    function nextSlide() {
+        currentIndex = (currentIndex + 1) % totalSlides;
+        showSlide(currentIndex);
+    }
+
+    function prevSlide() {
+        currentIndex = (currentIndex - 1 + totalSlides) % totalSlides;
+        showSlide(currentIndex);
+    }
+
+    const prevButton = document.querySelector('.main-carousel .prev');
+    const nextButton = document.querySelector('.main-carousel .next');
+    
+    prevButton.addEventListener('click', prevSlide);
+    nextButton.addEventListener('click', nextSlide); 
+
+    setInterval(nextSlide, 5000); 
+});
+
+</script>
+
+    
+</body>
+</html>
